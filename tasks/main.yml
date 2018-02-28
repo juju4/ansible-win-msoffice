@@ -1,0 +1,15 @@
+---
+
+- name: Ensure ansible directories exist
+  win_file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ win_temp_dir }}"
+    - "{{ win_log_dir }}"
+
+- include: windows-msoffice.yml
+- include: windows-msproject.yml
+
+- include: testing-msoffice.yml
+  when: win_testing_msoffice
