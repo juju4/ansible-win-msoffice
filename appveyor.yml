@@ -91,6 +91,9 @@ after_test:
     Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Word\Security"
     Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Outlook\Security"
     Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Excel\Options"
+    Get-ChildItem -Path "HKLM:\SOFTWARE\Microsoft\Office\16.0\Common\COM Compatibility\{0002CE02-0000-0000-C000-000000000046}"
+    Get-ChildItem -Path "HKLM:\SOFTWARE\Classes\Equation.3"
+    Get-ChildItem -Path "HKCR:\WOW6432Node\CLSID\{0002CE02-0000-0000-C000-000000000046}"
     True
 
 notifications:
