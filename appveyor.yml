@@ -86,10 +86,9 @@ test_script:
 after_test:
 - cmd: |
     %CYG_BASH% -lc 'ansible-playbook -i /cygdrive/c/projects/ansible-win-msoffice/test/appveyor/inventory /cygdrive/c/projects/ansible-win-msoffice/test/integration/default/default.yml $ANSIBLE_EXTRA_VARS'
-- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office" || true
-- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Word\Security" || true
-- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Outlook\Security" || true
-- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Excel\Options" || true
+- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Word\Security"
+- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Outlook\Security"
+- ps: Get-ChildItem -Path "HKCU:\Software\Microsoft\Office\16.0\Excel\Options"
 
 notifications:
 - provider: Email
