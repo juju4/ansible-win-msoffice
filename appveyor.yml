@@ -96,6 +96,9 @@ after_test:
     Get-ChildItem -Path "HKCR:\WOW6432Node\CLSID\{0002CE02-0000-0000-C000-000000000046}"
     True
 
+on_finish:
+- cmd: c:\opscode\inspec\bin\inspec.bat exec https://github.com/juju4/msoffice-baseline/ || exit 0
+
 notifications:
 - provider: Email
   to:
