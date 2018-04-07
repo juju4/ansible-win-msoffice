@@ -18,4 +18,6 @@ win_msoffice_disable_dde_excel_extras: true
 win_msoffice_disable_dde_excel_workbooklink: true
 win_msoffice_disable_equation_editor: true
 
-win_testing_msoffice: false
+win_msoffice_testing: false
+win_msoffice_testing_inspec: true
+win_msoffice_testing_o365_install: false

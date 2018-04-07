@@ -1,5 +1,22 @@
 ---
 
+- block:
+    - name: testing | Ensure inspec is present
+      win_chocolatey:
+        name: inspec
+        state: present
+
+    - name: testing | run msoffice-baseline
+      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/msoffice-baseline >{{ harden_win_log_dir }}\\inspec-msoffice.log"
+      ignore_errors: true
+
+    - name: testing | inspec results
+      win_shell: "Get-Content -Path \"{{ harden_win_log_dir }}\\inspec-msoffice.log\""
+      changed_when: false
+      ignore_errors: true
+
+  when: win_msoffice_testing_inspec
+
 # https://twitter.com/GossiTheDog/status/932694287480913920
 - name: Download test office files
   win_get_url:
@@ -23,5 +40,6 @@
 #    - office365proplus
 #    - office365homepremium
 #    - microsoft-teams
+  when: win_msoffice_testing_o365_install
 
 # https://support.microsoft.com/en-us/help/210565/how-to-use-startup-command-line-switches-to-start-word-2010-word-2007
