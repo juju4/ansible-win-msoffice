@@ -78,10 +78,6 @@ install:
 - cmd: "%CYG_BASH% -lc 'mkdir -p /etc/ansible/roles'"
 - cmd: "%CYG_BASH% -lc 'cp /cygdrive/c/projects/ansible-win-msoffice/test/appveyor/ansible.cfg /etc/ansible'"
 - cmd: "%CYG_BASH% -lc 'cp -R /cygdrive/c/projects/ansible-win-msoffice /etc/ansible/roles/juju4.win-msoffice'"
-- ps: |
-    $msiPath = "$($env:USERPROFILE)\inspec-2.0.17-1-x64.msi"
-    (New-Object Net.WebClient).DownloadFile('https://packages.chef.io/files/stable/inspec/2.0.17/windows/2016/inspec-2.0.17-1-x64.msi', $msiPath)
-    cmd /c start /wait msiexec /i $msiPath /q
 
 build: off
 test_script:
