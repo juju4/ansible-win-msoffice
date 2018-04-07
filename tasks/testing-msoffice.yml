@@ -1,9 +1,6 @@
 ---
 
 - block:
-    - name: Chocolatey installation
-      win_chocolatey: name=chocolatey state=present upgrade=no
-
     - name: testing | Ensure inspec is present
       win_chocolatey:
         name: inspec
