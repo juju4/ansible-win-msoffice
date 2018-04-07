@@ -105,7 +105,11 @@ on_finish:
 - ps: |
     $securePassword = ConvertTo-SecureString $env:winrm_password -AsPlainText -Force
     $credential = New-Object System.Management.Automation.PSCredential $env:winrm_user, $securePassword
-    Start-Process c:\opscode\inspec\bin\inspec.bat -NoNewWindow -Credential $credential -ArgumentList ("exec https://github.com/juju4/msoffice-baseline/")
+    $outfile = "c:\ProgramData\ansible\log\inspec.out"
+    $errfile = "c:\ProgramData\ansible\log\inspec.err"
+    Start-Process c:\opscode\inspec\bin\inspec.bat -NoNewWindow -Credential $credential -ArgumentList ("exec https://github.com/juju4/msoffice-baseline/") -RedirectStandardOut $outfile -RedirectStandardError $errfile
+    Get-Content -Path "c:\ProgramData\ansible\log\inspec.out"
+    Get-Content -Path "c:\ProgramData\ansible\log\inspec.err"
     True
 # as appveyor user
 #- cmd: c:\opscode\inspec\bin\inspec.bat exec https://github.com/juju4/msoffice-baseline/ || exit 0
