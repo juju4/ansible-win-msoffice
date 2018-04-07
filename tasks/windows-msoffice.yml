@@ -42,12 +42,13 @@
     - Outlook
     - PowerPoint
     - Visio
+    - Word
 
 - name: Ms Office | Update Macro settings
   win_regedit:
-    key: "HKCU:\\Software\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\msproject\\security"
-    name: VBAWarnings
-    data: "{{ win_msoffice_vbawarnings }}"
+    key: "{{ item.k }}"
+    name: "{{ item.n }}"
+    data: "{{ item.d }}"
     type: dword
   with_items:
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Security", n: 'VBAWarnings', d: "{{ win_msoffice_vbawarnings }}" }
