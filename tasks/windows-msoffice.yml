@@ -141,7 +141,7 @@
   win_regedit:
     key: "{{ item }}"
     name: "Compatibility Flags"
-    data: '0x400'
+    data: 0x400
     type: dword
   with_items:
     - "HKLM:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Common\\COM Compatibility\\{0002CE02-0000-0000-C000-000000000046}"
