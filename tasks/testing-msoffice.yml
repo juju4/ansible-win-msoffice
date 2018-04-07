@@ -7,11 +7,11 @@
         state: present
 
     - name: testing | run msoffice-baseline
-      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/msoffice-baseline >{{ harden_win_log_dir }}\\inspec-msoffice.log"
+      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/msoffice-baseline >{{ win_log_dir }}\\inspec-msoffice.log"
       ignore_errors: true
 
     - name: testing | inspec results
-      win_shell: "Get-Content -Path \"{{ harden_win_log_dir }}\\inspec-msoffice.log\""
+      win_shell: "Get-Content -Path \"{{ win_log_dir }}\\inspec-msoffice.log\""
       changed_when: false
       ignore_errors: true
 
