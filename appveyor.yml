@@ -102,7 +102,7 @@ after_test:
 
 on_finish:
 # as winrm_user
-- ps |
+- ps: |
     $securePassword = ConvertTo-SecureString $env:winrm_password -AsPlainText -Force
     $credential = New-Object System.Management.Automation.PSCredential $env:winrm_user, $securePassword
     Start-Process c:\opscode\inspec\bin\inspec.bat -Credential $credential -ArgumentList ("exec https://github.com/juju4/msoffice-baseline/")
