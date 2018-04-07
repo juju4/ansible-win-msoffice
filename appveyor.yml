@@ -101,7 +101,14 @@ after_test:
     True
 
 on_finish:
-- cmd: c:\opscode\inspec\bin\inspec.bat exec https://github.com/juju4/msoffice-baseline/ || exit 0
+# as winrm_user
+- ps |
+    $securePassword = ConvertTo-SecureString $env:winrm_password -AsPlainText -Force
+    $credential = New-Object System.Management.Automation.PSCredential $env:winrm_user, $securePassword
+    Start-Process c:\opscode\inspec\bin\inspec.bat -Credential $credential -ArgumentList ("exec https://github.com/juju4/msoffice-baseline/")
+    True
+# as appveyor user
+#- cmd: c:\opscode\inspec\bin\inspec.bat exec https://github.com/juju4/msoffice-baseline/ || exit 0
 
 notifications:
 - provider: Email
