@@ -57,6 +57,21 @@ $ ansible -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory -
 
 ## FAQ
 
+Reference links
+* https://www.asd.gov.au/publications/protect/hardening-ms-office-2016.htm
+* https://www.asd.gov.au/publications/protect/ms-office-macro-security.htm
+* http://www.asd.gov.au/publications/protect/Microsoft_Office_Macro_Security.pdf
+* https://blogs.technet.microsoft.com/mmpc/2016/03/22/new-feature-in-office-2016-can-block-macros-and-help-prevent-infection/
+* https://technet.microsoft.com/en-us/library/cc179076.aspx    ActiveX in Office
+* https://technet.microsoft.com/en-us/library/cc179039.aspx
+* https://doublepulsar.com/oleoutlook-bypass-almost-every-corporate-security-control-with-a-point-n-click-gui-37f4cbc107d0
+* https://blogs.technet.microsoft.com/mmpc/2016/06/14/wheres-the-macro-malware-author-are-now-using-ole-embedding-to-deliver-malicious-files/
+* https://www.endgame.com/blog/technical-blog/bug-feature-debate-back-yet-again-ddeauto-root-cause-analysis
+* https://blog.barkly.com/microsoft-office-malware-attack-no-macros
+* https://gist.github.com/wdormann/732bb88d9b5dd5a66c9f1e1498f31a1b
+* https://technet.microsoft.com/en-us/library/security/4053440
+* https://blogs.technet.microsoft.com/diana_tudor/2014/12/02/microsoft-project-how-to-control-macro-settings-using-registry-keys/
+
 ## License
 
 BSD 2-clause
