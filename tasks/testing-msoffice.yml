@@ -44,3 +44,6 @@
   when: win_msoffice_testing_o365_install
 
 # https://support.microsoft.com/en-us/help/210565/how-to-use-startup-command-line-switches-to-start-word-2010-word-2007
+# https://charles.dardaman.com/js_coinhive_in_excel
+# https://twitter.com/nikhil_mitt/status/1037029313432956931
+# Set-Content C:\payloads\payload.xls -Stream "Zone.Identifier" -Value "[ZoneTransfer]\nZoneId=4"

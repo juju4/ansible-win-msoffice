@@ -72,6 +72,11 @@ Reference links
 * https://technet.microsoft.com/en-us/library/security/4053440
 * https://blogs.technet.microsoft.com/diana_tudor/2014/12/02/microsoft-project-how-to-control-macro-settings-using-registry-keys/
 
+* Signing Office/Macros files
+  * https://www.howto-outlook.com/howto/selfcert.htm
+  * https://support.office.com/en-us/article/digitally-sign-your-macro-project-956e9cc8-bbf6-4365-8bfa-98505ecd1c01
+  * https://www.techrepublic.com/article/how-to-create-a-self-signed-digital-certificate-for-vba-macros-in-office-365/
+
 ## License
 
 BSD 2-clause
