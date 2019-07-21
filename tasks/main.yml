@@ -12,4 +12,4 @@
 - include: windows-msproject.yml
 
 - include: testing-msoffice.yml
-  when: win_msoffice_testing
+  when: win_msoffice_testing|bool

@@ -154,7 +154,7 @@
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Options"
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Options\\WordMail"
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Options"
-  when: win_msoffice_disable_dde_updatelink
+  when: win_msoffice_disable_dde_updatelink|bool
 
 - name: Ms Office | Disable DDE - OneNote DisableEmbeddedFiles
   win_regedit:
@@ -166,7 +166,7 @@
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\OneNote\\Options"
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Options\\WordMail"
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Options"
-  when: win_msoffice_disable_dde_embeddedfiles
+  when: win_msoffice_disable_dde_embeddedfiles|bool
 
 - name: Ms Office | Disable DDE - Excel extras
   win_regedit:
@@ -178,7 +178,7 @@
     - { n: "DDEAllowed", d: 0 }
     - { n: "DDECleaned", d: 1 }
     - { n: "Options", d: 117 }
-  when: win_msoffice_disable_dde_excel_extras
+  when: win_msoffice_disable_dde_excel_extras|bool
 
 - name: Ms Office | Disable DDE - Excel WorkbookLinkWarnings
   win_regedit:
@@ -188,7 +188,7 @@
     type: dword
   with_items:
     - { n: "WorkbookLinkWarnings", d: 2 }
-  when: win_msoffice_disable_dde_excel_workbooklink
+  when: win_msoffice_disable_dde_excel_workbooklink|bool
 
 # https://embedi.com/blog/skeleton-closet-ms-office-vulnerability-you-didnt-know-about
 # https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11882
@@ -202,7 +202,7 @@
   with_items:
     - "HKLM:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Common\\COM Compatibility\\{0002CE02-0000-0000-C000-000000000046}"
     - "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Common\\COM Compatibility\\{0002CE02-0000-0000-C000-000000000046}"
-  when: win_msoffice_disable_equation_editor
+  when: win_msoffice_disable_equation_editor|bool
 
 - name: Disable Equation Editor - CVE-2017-11882
   win_regedit:
@@ -212,4 +212,4 @@
     - 'HKCR:\CLSID\{0002CE02-0000-0000-C000-000000000046}'
     - 'HKCR:\WOW6432Node\CLSID\{0002CE02-0000-0000-C000-000000000046}'
     - 'HKLM:\SOFTWARE\Classes\Equation.3'
-  when: win_msoffice_disable_equation_editor
+  when: win_msoffice_disable_equation_editor|bool

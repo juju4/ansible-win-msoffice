@@ -16,7 +16,7 @@
       changed_when: false
       ignore_errors: true
 
-  when: win_msoffice_testing_inspec
+  when: win_msoffice_testing_inspec|bool
 
 # https://twitter.com/GossiTheDog/status/932694287480913920
 - name: Download test office files
@@ -41,7 +41,7 @@
 #    - office365proplus
 #    - office365homepremium
 #    - microsoft-teams
-  when: win_msoffice_testing_o365_install
+  when: win_msoffice_testing_o365_install|bool
 
 # https://support.microsoft.com/en-us/help/210565/how-to-use-startup-command-line-switches-to-start-word-2010-word-2007
 # https://charles.dardaman.com/js_coinhive_in_excel
