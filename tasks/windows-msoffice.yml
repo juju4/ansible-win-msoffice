@@ -45,51 +45,51 @@
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Security",
         n: 'VBAWarnings',
         d: "{{ win_msoffice_vbawarnings }}"
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Security",
         n: 'blockcontentexecutionfrominternet',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Security",
         n: 'VBAWarnings',
         d: "{{ win_msoffice_vbawarnings }}"
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Security",
         n: 'blockcontentexecutionfrominternet',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Powerpoint\\Security",
         n: 'VBAWarnings',
         d: "{{ win_msoffice_vbawarnings }}"
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Powerpoint\\Security",
         n: 'blockcontentexecutionfrominternet',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Access\\Security",
         n: 'VBAWarnings',
         d: "{{ win_msoffice_vbawarnings }}"
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Access\\Security",
         n: 'blockcontentexecutionfrominternet',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Publisher\\Security",
         n: 'VBAWarnings',
         d: "{{ win_msoffice_vbawarnings }}"
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Publisher\\Security",
         n: 'blockcontentexecutionfrominternet',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Visio\\Security",
         n: 'VBAWarnings',
         d: "{{ win_msoffice_vbawarnings }}"
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Visio\\Security",
         n: 'blockcontentexecutionfrominternet',
         d: 1
-      }
+    }
 
 - name: Ms Office | Ensure Protected view is enabled
   win_regedit:
@@ -101,47 +101,47 @@
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Outlook\\Security",
         n: 'MarkInternalAsUnsafe',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Outlook\\Security",
         n: 'MarkInternalAsUnsafe',
         d: 1
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Security\\ProtectedView",
         n: 'DisableAttachementsInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Security\\ProtectedView",
         n: 'DisableInternetFilesInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Word\\Security\\ProtectedView",
         n: 'DisableUnsafeLocationsInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Security\\ProtectedView",
         n: 'DisableAttachementsInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Security\\ProtectedView",
         n: 'DisableInternetFilesInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Security\\ProtectedView",
         n: 'DisableUnsafeLocationsInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Powerpoint\\Security\\ProtectedView",
         n: 'DisableAttachementsInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Powerpoint\\Security\\ProtectedView",
         n: 'DisableInternetFilesInPV',
         d: 0
-      }
+    }
     - { k: "HKCU:\\SOFTWARE\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Powerpoint\\Security\\ProtectedView",
         n: 'DisableUnsafeLocationsInPV',
         d: 0
-      }
+    }
 #    - { k: '', n: '', d: '' }
 
 - name: Ms Office | Disable DDE - Link auto update

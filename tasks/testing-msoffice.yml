@@ -34,13 +34,13 @@
     state: present
     upgrade: no
   with_items:
-# 2013
-#    - officeproplus2013
-# 2016
+    # 2013
+    # - officeproplus2013
+    # 2016
     - office365business
-#    - office365proplus
-#    - office365homepremium
-#    - microsoft-teams
+    # - office365proplus
+    # - office365homepremium
+    # - microsoft-teams
   when: win_msoffice_testing_o365_install|bool
 
 # https://support.microsoft.com/en-us/help/210565/how-to-use-startup-command-line-switches-to-start-word-2010-word-2007
