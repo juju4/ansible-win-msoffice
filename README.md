@@ -1,6 +1,3 @@
-[![Build Status - Master](https://travis-ci.org/juju4/ansible-win-msoffice.svg?branch=master)](https://travis-ci.org/juju4/ansible-win-msoffice)
-[![Build Status - Devel](https://travis-ci.org/juju4/ansible-win-msoffice.svg?branch=devel)](https://travis-ci.org/juju4/ansible-win-msoffice/branches)(Syntax Only)
-
 [![Appveyor - Master](https://ci.appveyor.com/api/projects/status/m0qj12g9niyr86yo?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-msoffice)
 ![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/m0qj12g9niyr86yo/branch/devel?svg=true)
 
