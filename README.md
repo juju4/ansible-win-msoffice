@@ -1,5 +1,5 @@
-[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/m0qj12g9niyr86yo?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-msoffice)
-![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/m0qj12g9niyr86yo/branch/devel?svg=true)
+[![Appveyor - Master](https://ci.appveyor.com/api/projects/status/m0qj12g9niyr86yo/branch/master?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-msoffice/branch/master)
+[![Appveyor - Devel](https://ci.appveyor.com/api/projects/status/m0qj12g9niyr86yo/branch/devel?svg=true)](https://ci.appveyor.com/project/juju4/ansible-win-msoffice/branch/devel)
 
 # MsOffice security ansible role
 
@@ -12,6 +12,8 @@ It was tested on the following versions:
  * 2.3
  * 2.4
  * 2.5b2
+ * 4.10.0
+ * 5.3.0
 
 ### Operating systems
 
@@ -25,7 +27,7 @@ For example
 ```
 - host: all
   roles:
-    - juju4.win-msoffice
+    - juju4.win_msoffice
 ```
 
 Run
@@ -43,7 +45,7 @@ See defaults/main.yml for full scope
 This role has a travis basic test (for github, syntax check only), Appveyor test and a Vagrantfile (test/vagrant).
 
 ```
-$ cd /path/to/roles/juju4.win-msoffice/test/vagrant
+$ cd /path/to/roles/juju4.win_msoffice/test/vagrant
 $ vagrant up
 $ vagrant provision
 $ vagrant destroy
