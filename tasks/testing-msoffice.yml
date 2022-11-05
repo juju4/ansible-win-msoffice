@@ -1,27 +1,26 @@
 ---
 
 - name: Inspec
+  when: win_msoffice_testing_inspec|bool
   block:
-    - name: testing | Ensure inspec is present
-      win_chocolatey:
+    - name: Testing | Ensure inspec is present
+      chocolatey.chocolatey.win_chocolatey:
         name: inspec
         state: present
 
-    - name: testing | run msoffice-baseline
-      win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/msoffice-baseline
+    - name: Testing | run msoffice-baseline
+      ansible.windows.win_command: "c:\\opscode\\inspec\\bin\\inspec.bat exec https://github.com/juju4/msoffice-baseline
                     >{{ win_log_dir }}\\inspec-msoffice.log"
       failed_when: false
 
-    - name: testing | inspec results
-      win_shell: "Get-Content -Path \"{{ win_log_dir }}\\inspec-msoffice.log\""
+    - name: Testing | inspec results
+      ansible.windows.win_shell: "Get-Content -Path \"{{ win_log_dir }}\\inspec-msoffice.log\""
       changed_when: false
       failed_when: false
 
-  when: win_msoffice_testing_inspec|bool
-
 # https://twitter.com/GossiTheDog/status/932694287480913920
 - name: Download test office files
-  win_get_url:
+  ansible.windows.win_get_url:
     url: "{{ item }}"
     dest: "{{ win_temp_dir }}\\{{ item | win_basename }}"
   with_items:
@@ -30,7 +29,7 @@
   failed_when: false
 
 - name: MsOffice trial by Chocolatey installation
-  win_chocolatey:
+  chocolatey.chocolatey.win_chocolatey:
     name: "{{ item }}"
     state: present
     upgrade: no

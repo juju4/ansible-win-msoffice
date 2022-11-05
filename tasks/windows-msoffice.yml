@@ -1,7 +1,7 @@
 ---
 
 - name: Ms Office | defined trusted locations path
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\{{ item }}\\Security\\Trusted Locations"
     name: Path
     data: "{{ win_msoffice_trustedlocations }}"
@@ -15,14 +15,14 @@
     - Word
 
 - name: Ms Office | silently disable OLE Package function in Outlook
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Outlook\\Security"
     name: ShowOLEPackageObj
     data: 0
     type: dword
 
 - name: Ms Office | Prevent activation of OLE packages
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\{{ item }}\\Security"
     name: PackagerPrompt
     data: "{{ win_msoffice_packagerprompt }}"
@@ -36,7 +36,7 @@
     - Word
 
 - name: Ms Office | Update Macro settings
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "{{ item.k }}"
     name: "{{ item.n }}"
     data: "{{ item.d }}"
@@ -92,7 +92,7 @@
     }
 
 - name: Ms Office | Ensure Protected view is enabled
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "{{ item.k }}"
     name: "{{ item.n }}"
     data: "{{ item.d }}"
@@ -145,7 +145,7 @@
 #    - { k: '', n: '', d: '' }
 
 - name: Ms Office | Disable DDE - Link auto update
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "{{ item }}"
     name: DontUpdateLinks
     data: 1
@@ -157,7 +157,7 @@
   when: win_msoffice_disable_dde_updatelink|bool
 
 - name: Ms Office | Disable DDE - OneNote DisableEmbeddedFiles
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "{{ item }}"
     name: DisableEmbeddedFiles
     data: 1
@@ -169,7 +169,7 @@
   when: win_msoffice_disable_dde_embeddedfiles|bool
 
 - name: Ms Office | Disable DDE - Excel extras
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Options"
     name: "{{ item.n }}"
     data: "{{ item.d }}"
@@ -181,7 +181,7 @@
   when: win_msoffice_disable_dde_excel_extras|bool
 
 - name: Ms Office | Disable DDE - Excel WorkbookLinkWarnings
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Security"
     name: "{{ item.n }}"
     data: "{{ item.d }}"
@@ -194,7 +194,7 @@
 # https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11882
 # https://support.microsoft.com/en-ca/help/4055535/how-to-disable-equation-editor-3-0
 - name: Disable Equation Editor - CVE-2017-11882
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "{{ item }}"
     name: "Compatibility Flags"
     data: 1024
@@ -205,7 +205,7 @@
   when: win_msoffice_disable_equation_editor|bool
 
 - name: Disable Equation Editor - CVE-2017-11882
-  win_regedit:
+  ansible.windows.win_regedit:
     key: "{{ item }}"
     state: absent
   with_items:
