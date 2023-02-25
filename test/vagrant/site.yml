@@ -1,9 +1,10 @@
 ---
 
-- hosts: all
+- name: Vagrant play
+  hosts: all
   become_method: runas
   vars:
-    - win_msoffice_testing: true
-    - win_msoffice_testing_inspec: true
+    win_msoffice_testing: true
+    win_msoffice_testing_inspec: true
   roles:
-    - juju4.win-msoffice
+    - juju4.win_msoffice
