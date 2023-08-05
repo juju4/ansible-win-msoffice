@@ -2,7 +2,7 @@
 
 - name: Test play
   hosts: all
-  become_method: runas
+  become_method: ansible.builtin.runas
   vars:
     win_msoffice_testing: true
     win_msoffice_testing_inspec: true
