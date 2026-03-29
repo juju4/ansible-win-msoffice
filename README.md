@@ -70,6 +70,7 @@ Reference links
 * https://gist.github.com/wdormann/732bb88d9b5dd5a66c9f1e1498f31a1b
 * https://technet.microsoft.com/en-us/library/security/4053440
 * https://blogs.technet.microsoft.com/diana_tudor/2014/12/02/microsoft-project-how-to-control-macro-settings-using-registry-keys/
+* [Addressing Initial Access, Mar 2026](https://www.huntress.com/blog/addressing-initial-access), [OneNote blocks embedded files that have dangerous extensions, 2023](https://learn.microsoft.com/en-us/microsoft-365-apps/security/onenote-extension-block)
 
 * Signing Office/Macros files
   * https://www.howto-outlook.com/howto/selfcert.htm

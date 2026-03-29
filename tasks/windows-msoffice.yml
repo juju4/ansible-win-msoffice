@@ -168,6 +168,16 @@
     - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Options"
   when: win_msoffice_disable_dde_embeddedfiles|bool
 
+- name: Ms Office | OneNote blocked extensions
+  ansible.windows.win_regedit:
+    key: "{{ item }}"
+    name: blockedextensions
+    data: '.js;.exe;.bat;.vbs;.com;.scr;.cmd;.ps1'
+    type: string
+  with_items:
+    - "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\OneNote\\Options\\embeddedfileopenoptions"
+  when: win_msoffice_disable_dde_embeddedfiles|bool
+
 - name: Ms Office | Disable DDE - Excel extras
   ansible.windows.win_regedit:
     key: "HKCU:\\Software\\Microsoft\\Office\\{{ win_msoffice_version_reg }}\\Excel\\Options"
